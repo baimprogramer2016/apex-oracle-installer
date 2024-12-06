@@ -18,7 +18,7 @@ https://tomcat.apache.org/download-90.cgi
 
 3. Buatkan Folder Apex pada Partition C (C://Apex) , Kopi isi folder apex_22.2 kedalam Folder C://Apex 
 
-4. Buka Cmd as Administrator dan masuk ketikan, lakukan perintah satu2
+4. Install Apex 22.  , Buka Cmd as Administrator dan masuk ketikan, lakukan perintah satu2
 
 ```sh
   cd\
@@ -26,7 +26,7 @@ https://tomcat.apache.org/download-90.cgi
   sqlplus /nolog
   conn sys as sysdba
 ```
-*Jika diminta passwodd, kosongkan saja langsung enter
+*Jika diminta password, kosongkan saja langsung enter
 
 5. Lakukan Setup, lakukan perintah satu2
    
@@ -35,7 +35,24 @@ https://tomcat.apache.org/download-90.cgi
   alter session set container = XEPDB1;
   COLUMN default_tablespace FORMAT A15
   COLUMN temporary_tablespace FORMAT A15
-  @apexins.sql sysaux sysaux temp /i/
+  @apexins.sql SYSAUX SYSAUX TEMP /i/
+
+  @apex_rest_config.sql ->masukin password
+  @apxchpwd.sql
+
+  ALTER USER APEX_PUBLIC_USER ACCOUNT UNLOCK;
+  ALTER USER APEX_LISTENER ACCOUNT UNLOCK;
+  ALTER USER APEX_REST_PUBLIC_USER ACCOUNT UNLOCK;
+
+  alter pluggable database pdb$seed close;
+  alter pluggable database pdb$seed open read write;
 
 ```
+
+6. Install ORDS, Buat Folder C://App/ords, masukan isi pada folder installer ORDS, dan buat folder C://App/config/ords/logs
+```sh
+  cd App/ords
+  java -jar ords.war --config C:\App\config install
+```
+   
 
