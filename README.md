@@ -16,9 +16,9 @@ https://tomcat.apache.org/download-90.cgi
 
 ## 2. Buatkan Folder Oracle pada Partition C (C://Oracle), lalu install setup.exe pada folder OracleXE213_Win64, dan arahkan Path ke C://Oracle , tunggu sampai selesai, akan diminta setup Password
 
-## 3. Buatkan Folder Apex pada Partition C (C://Apex) , Kopi isi folder apex_22.2 kedalam Folder C://Apex 
+3. Buatkan Folder Apex pada Partition C (C://Apex) , Kopi isi folder apex_22.2 kedalam Folder C://Apex 
 
-## 4. Buka Cmd as Administrator dan masuk ketikan
+# 4. Buka Cmd as Administrator dan masuk ketikan
 
 ```sh
   cd\
